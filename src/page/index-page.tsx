@@ -1,4 +1,5 @@
 import { view, route } from 'coco-mvc';
+import HeaderBar from "../view/header-bar";
 import Button from '../view/button'
 
 @route('/')
@@ -7,9 +8,7 @@ class IndexPage {
   @view()
   h() {
     return <div className={'w-full pt-14'}>
-      <div className={'fixed flex flex-row justify-between items-center top-0 left-0 w-full px-8 h-14 border-b border-gray-200'}>
-        v0.0.1-alpha
-      </div>
+      <HeaderBar />
       <div className={'flex flex-col items-center py-20'}>
         <div className={'text-7xl text-amber-800'}>
           coco-mvc
