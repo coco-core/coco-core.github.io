@@ -44,7 +44,7 @@ const config = {
     },
     compress: true,
     historyApiFallback: true,
-    port: 8000,
+    port: 9700,
     devMiddleware: {
       writeToDisk: true,
     }
