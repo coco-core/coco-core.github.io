@@ -1,5 +1,6 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
+const json = require('./config/config.json');
 
 const config = {
   mode: 'development',
@@ -36,12 +37,12 @@ const config = {
   },
   output: {
     filename: 'main.js',
-    path: path.resolve(__dirname, 'public'),
+    path: path.resolve(__dirname, json.target),
     clean: true,
   },
   devServer: {
     static: {
-      directory: path.join(__dirname, 'public'),
+      directory: path.join(__dirname, json.target),
     },
     compress: true,
     historyApiFallback: true,
