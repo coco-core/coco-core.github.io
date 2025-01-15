@@ -1,3 +1,4 @@
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
 
 const config = {
@@ -35,7 +36,7 @@ const config = {
   },
   output: {
     filename: 'main.js',
-    path: path.resolve(__dirname, 'public/dist'),
+    path: path.resolve(__dirname, 'public'),
     clean: true,
   },
   devServer: {
@@ -49,6 +50,18 @@ const config = {
       writeToDisk: true,
     }
   },
+  plugins: [
+    new HtmlWebpackPlugin({
+      templateContent: `
+<!DOCTYPE html>
+<html lang="en">
+<body>
+  <div id="root"></div>
+</body>
+</html>
+  `,
+    })
+  ],
 };
 
 module.exports = config;
