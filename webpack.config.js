@@ -1,7 +1,9 @@
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
+const json = require('./config/config.json');
 
 const config = {
-  mode: 'production',
+  mode: 'development',
   entry: './src/.coco/index.tsx',
   module: {
     rules: [
@@ -10,6 +12,24 @@ const config = {
         use: [{ loader: 'babel-loader' }],
         exclude: /node_modules/,
       },
+      {
+        test: /\.css$/,
+        use: [
+          'style-loader', // 将 CSS 注入到 DOM 中
+          'css-loader',   // 解析 CSS 文件
+          {
+            loader: 'postcss-loader', // 使用 PostCSS 插件
+            options: {
+              postcssOptions: {
+                plugins: [
+                  require('tailwindcss'),
+                  require('autoprefixer'),
+                ],
+              },
+            },
+          },
+        ],
+      },
     ],
   },
   resolve: {
@@ -17,16 +37,32 @@ const config = {
   },
   output: {
     filename: 'main.js',
-    path: path.resolve(__dirname, 'public/dist'),
+    path: path.resolve(__dirname, json.target),
     clean: true,
   },
   devServer: {
     static: {
-      directory: path.join(__dirname, 'public'),
+      directory: path.join(__dirname, json.target),
     },
     compress: true,
-    port: 8000,
+    historyApiFallback: true,
+    port: 9700,
+    devMiddleware: {
+      writeToDisk: true,
+    }
   },
+  plugins: [
+    new HtmlWebpackPlugin({
+      templateContent: `
+<!DOCTYPE html>
+<html lang="en">
+<body>
+  <div id="root"></div>
+</body>
+</html>
+  `,
+    })
+  ],
 };
 
 module.exports = config;
