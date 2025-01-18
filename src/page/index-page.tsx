@@ -11,7 +11,7 @@ class IndexPage {
 
   @bind()
   handleClick() {
-    this.router.push('/reference/view')
+    this.router.navigateTo('/reference/view')
   }
 
   @view()
