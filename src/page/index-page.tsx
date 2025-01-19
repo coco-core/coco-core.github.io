@@ -23,7 +23,7 @@ class IndexPage {
           coco-mvc
         </div>
         <div className={'text-3xl mt-4'}>
-          使用装饰器构建可扩展的WEB应用
+          使用<span className={'text-amber-800'}>@装饰器</span>构建可扩展的WEB应用
         </div>
       </div>
       <div className={'flex justify-center'}>
