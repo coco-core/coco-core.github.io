@@ -53,6 +53,7 @@ const config = {
   },
   plugins: [
     new HtmlWebpackPlugin({
+      publicPath: '/',
       templateContent: `
 <!DOCTYPE html>
 <html lang="en">
