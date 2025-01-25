@@ -15,7 +15,7 @@ class IndexPage {
   }
 
   @view()
-  h() {
+  render() {
     return <div className={'w-full pt-14'}>
       <HeaderBar />
       <div className={'flex flex-col items-center py-20'}>
