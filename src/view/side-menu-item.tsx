@@ -10,8 +10,9 @@ class SideMenuItem {
 
   @view()
   render() {
-    return <div className={this.props.active ? 'text-amber-800 h-[30px] leading-[30px]' : 'cursor-pointer h-[30px] leading-[30px]'}
-                onClick={this.props.onClick}
+    return <div
+      className={`h-[30px] leading-[30px] ${this.props.active ? 'text-amber-800': 'cursor-pointer'}`}
+      onClick={this.props.onClick}
     >
       {this.props.label}
     </div>
