@@ -6,7 +6,7 @@ import SideMenu from "../view/side-menu";
 @view()
 class ReferenceAutowiredPage {
   @view()
-  h() {
+  render() {
     return <div className={'w-full pt-14'}>
       <HeaderBar/>
       <div className={'flex flex-row'}>

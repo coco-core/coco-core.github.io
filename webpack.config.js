@@ -1,4 +1,5 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CopyPlugin = require('copy-webpack-plugin');
 const path = require('path');
 const json = require('./config/config.json');
 
@@ -62,7 +63,15 @@ const config = {
 </body>
 </html>
   `,
-    })
+    }),
+    new CopyPlugin({
+      patterns: [
+        { from: 'other-assert', to: './' },
+      ],
+      options: {
+        concurrency: 100,
+      },
+    }),
   ],
 };
 
