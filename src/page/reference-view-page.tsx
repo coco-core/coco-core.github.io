@@ -4,17 +4,20 @@ import SideMenu from "../view/side-menu";
 import Header1 from "../view/header-1";
 import Header2 from "../view/header-2";
 import Card from "../view/card";
+import Code from "../view/code";
 
 @route('/reference/view')
 @view()
 class ReferenceViewPage {
-  code1 = '@view()'
-  code2 = 'class IndexPage {'
-  code3 = '@view()'
-  code4 = 'render() {'
-  code5 = 'return <div>hello world</div>'
-  code6 = '}'
-  code7 = '}'
+  code = `
+@view()
+class IndexPage {
+  @view()
+  render() {
+    return <div>hello world</div>
+  }
+}
+  `
 
   @view()
   render() {
@@ -25,15 +28,7 @@ class ReferenceViewPage {
         <div className={'flex-auto p-4'}>
           <Header1>@view</Header1>
           <div>view既是class装饰器，也是method装饰器，共同申明一个视图类。</div>
-          <div>
-            <div>{this.code1}</div>
-            <div>{this.code2}</div>
-            <div>&nbsp;&nbsp;{this.code3}</div>
-            <div>&nbsp;&nbsp;{this.code4}</div>
-            <div>&nbsp;&nbsp;&nbsp;&nbsp;{this.code5}</div>
-            <div>&nbsp;&nbsp;{this.code6}</div>
-            <div>{this.code7}</div>
-          </div>
+          <Code code={this.code} />
           <Header2>装饰class</Header2>
           <div>表示将被装饰的类注册成视图组件，用于描述页面或组件</div>
           <Card>

@@ -4,15 +4,18 @@ import SideMenu from "../view/side-menu";
 import Header1 from "../view/header-1";
 import Header2 from "../view/header-2";
 import Card from "../view/card";
+import Code from "../view/code";
 
 @route('/reference/bind')
 @view()
 class ReferenceBindPage {
-  code1 = '@view()'
-  code2 = 'class IndexPage {'
-  code3 = '@bind()'
-  code4 = 'onClick() {}'
-  code5 = '}'
+  code = `
+@view()
+class IndexPage {
+  @bind()
+  onClick() {}
+}
+  `
 
   @view()
   render() {
@@ -23,13 +26,7 @@ class ReferenceBindPage {
         <div className={'flex-auto p-4'}>
           <Header1>@bind</Header1>
           <div>bind是method装饰器，用于绑定被装饰方法的this到当前实例</div>
-          <div>
-            <div>{this.code1}</div>
-            <div>{this.code2}</div>
-            <div>&nbsp;&nbsp;{this.code3}</div>
-            <div>&nbsp;&nbsp;{this.code4}</div>
-            <div>{this.code5}</div>
-          </div>
+          <Code code={this.code} />
           <Header2>装饰method</Header2>
           <Card>
             <div>注意</div>
