@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
+    "prepare": "ts-patch install -s",
     "dev": "coco dev",
     "build": "coco build"
   },
@@ -12,7 +13,8 @@
     "@babel/plugin-proposal-decorators": "^7.25.9",
     "@babel/plugin-transform-react-jsx": "^7.25.9",
     "@babel/preset-typescript": "^7.26.0",
-    "@cocojs/cli": "^0.0.1-alpha202501251009",
+    "@cocojs/cli": "^0.0.1-alpha202502041918",
+    "@cocojs/typescript-transformer-autowired": "^0.0.1",
     "autoprefixer": "^10.4.20",
     "babel-loader": "^9.2.1",
     "copy-webpack-plugin": "^12.0.2",
@@ -23,11 +25,14 @@
     "postcss-loader": "^8.1.1",
     "style-loader": "^4.0.0",
     "tailwindcss": "^3.4.17",
+    "ts-loader": "^9.5.2",
+    "ts-patch": "^3.3.0",
+    "typescript": "^5.7.3",
     "webpack": "^5.97.1",
     "webpack-cli": "^6.0.1",
     "webpack-dev-server": "^5.2.0"
   },
   "dependencies": {
-    "coco-mvc": "^0.0.1-alpha202501251009"
+    "coco-mvc": "^0.0.1-alpha202502041918"
   }
 }

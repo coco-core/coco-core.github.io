@@ -23,7 +23,7 @@ class SideMenu {
     },
   ]
 
-  @autowired(Router)
+  @autowired()
   private router: Router;
 
   @bind()
