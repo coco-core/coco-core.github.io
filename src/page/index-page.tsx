@@ -6,7 +6,7 @@ import Button from '../view/button'
 @view()
 class IndexPage {
 
-  @autowired(Router)
+  @autowired()
   private router: Router;
 
   @bind()
