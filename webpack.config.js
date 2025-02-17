@@ -16,9 +16,6 @@ const config = {
             loader: "ts-loader",
             options: {
               transpileOnly: false,
-              compilerOptions: {
-                verbatimModuleSyntax: true,
-              }
             }
           }
         ],
