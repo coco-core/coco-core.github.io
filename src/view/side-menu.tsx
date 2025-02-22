@@ -33,7 +33,6 @@ class SideMenu {
     }
   }
 
-  @view()
   render() {
     return <div className='p-4'>
       {this.menu.map(i => {

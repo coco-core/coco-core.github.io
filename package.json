@@ -13,7 +13,7 @@
     "@babel/plugin-proposal-decorators": "^7.25.9",
     "@babel/plugin-transform-react-jsx": "^7.25.9",
     "@babel/preset-typescript": "^7.26.0",
-    "@cocojs/cli": "^0.0.1-alpha202502172040",
+    "@cocojs/cli": "^0.0.1-alpha202502221137",
     "@cocojs/typescript-transformer": "^0.0.9",
     "autoprefixer": "^10.4.20",
     "babel-loader": "^9.2.1",
@@ -33,6 +33,6 @@
     "webpack-dev-server": "^5.2.0"
   },
   "dependencies": {
-    "coco-mvc": "^0.0.1-alpha202502172040"
+    "coco-mvc": "^0.0.1-alpha202502221137"
   }
 }

@@ -6,7 +6,6 @@ class Card {
     children: string;
   }
 
-  @view()
   render() {
     return <div
       className={'p-3 rounded-md bg-amber-100'}

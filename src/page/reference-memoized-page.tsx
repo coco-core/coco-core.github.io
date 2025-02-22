@@ -17,7 +17,6 @@ class IndexPage {
 }
 `
 
-  @view()
   render() {
     return <div className={'w-full pt-14'}>
       <HeaderBar/>
