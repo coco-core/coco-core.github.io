@@ -5,7 +5,6 @@ import SideMenu from "../view/side-menu";
 @route('/reference/autowired')
 @view()
 class ReferenceAutowiredPage {
-  @view()
   render() {
     return <div className={'w-full pt-14'}>
       <HeaderBar/>

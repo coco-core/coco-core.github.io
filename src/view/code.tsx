@@ -6,7 +6,6 @@ class Code {
     code: string;
   }
 
-  @view()
   render() {
     return <div
       className={'p-3 rounded-md bg-black text-white whitespace-pre'}

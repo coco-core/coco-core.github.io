@@ -12,14 +12,11 @@ class ReferenceViewPage {
   code = `
 @view()
 class IndexPage {
-  @view()
   render() {
     return <div>hello world</div>
   }
 }
   `
-
-  @view()
   render() {
     return <div className={'w-full pt-14'}>
       <HeaderBar/>
@@ -36,16 +33,6 @@ class IndexPage {
             <ul>
               <li>如果描述页面，源文件放在page文件夹下</li>
               <li>如果描述组件，源文件放在view文件夹下</li>
-            </ul>
-          </Card>
-          <Header2>装饰method</Header2>
-          <div>表示被装饰的方式就是渲染函数，该方法应该返回一个jsx对象</div>
-          <Card>
-            <div>注意</div>
-            <ul>
-              <li>
-                每个视图组件内部有且只有一个渲染函数
-              </li>
             </ul>
           </Card>
           <div></div>

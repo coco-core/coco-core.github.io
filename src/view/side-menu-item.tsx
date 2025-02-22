@@ -8,7 +8,6 @@ class SideMenuItem {
     onClick: () => void;
   }
 
-  @view()
   render() {
     return <div
       className={`h-[30px] leading-[30px] ${this.props.active ? 'text-amber-800': 'cursor-pointer'}`}

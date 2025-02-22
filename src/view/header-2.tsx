@@ -7,7 +7,6 @@ class Header2 {
     children: string;
   }
 
-  @view()
   render() {
     return <div className={'text-3xl font-bold leading-normal'}>
       {this.props.children}
