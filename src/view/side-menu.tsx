@@ -10,6 +10,14 @@ class SideMenu {
       route: '/reference/view'
     },
     {
+      name: 'controller',
+      route: '/reference/controller'
+    },
+    {
+      name: 'service',
+      route: '/reference/service'
+    },
+    {
       name: 'bind',
       route: '/reference/bind'
     },
@@ -20,6 +28,34 @@ class SideMenu {
     {
       name: 'memoized',
       route: '/reference/memoized'
+    },
+    {
+      name: 'ref',
+      route: '/reference/ref'
+    },
+    {
+      name: 'component',
+      route: '/reference/component'
+    },
+    {
+      name: 'route',
+      route: '/reference/route'
+    },
+    {
+      name: 'store',
+      route: '/reference/store'
+    },
+    {
+      name: 'reactiveAutowired',
+      route: '/reference/reactive-autowired'
+    },
+    {
+      name: 'target',
+      route: '/reference/target'
+    },
+    {
+      name: 'webApplication',
+      route: '/reference/webApplication'
     },
   ]
 

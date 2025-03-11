@@ -6,15 +6,15 @@ import Header2 from "../../view/header-2";
 import Card from "../../view/card";
 import Code from "../../view/code";
 
-@route('/reference/view')
+@route('/reference/service')
 @view()
-class ReferenceViewPage {
+class ReferenceServicePage {
   code = `
-@view()
-class IndexPage {
-  render() {
-    return <div>hello world</div>
-  }
+@service()
+class UserService {
+  async login() {}
+  
+  async logout() {}
 }
   `
   render() {
@@ -23,16 +23,14 @@ class IndexPage {
       <div className={'flex flex-row'}>
         <SideMenu/>
         <div className={'flex-auto p-4'}>
-          <Header1>@view</Header1>
-          <div>@view用于申明被装饰的类是视图类。</div>
-          <Code code={this.code} />
+          <Header1>@service</Header1>
+          <div>service用于申明被装饰的类是服务类，服务类比较内聚，只关心本服务相关的业务。</div>
           <Header2>装饰class</Header2>
-          <div>表示将被装饰的类注册成视图组件，用于描述页面或组件</div>
+          <Code code={this.code} />
           <Card>
             <div>注意</div>
             <ul>
-              <li>如果描述页面，源文件放在page文件夹下</li>
-              <li>如果描述组件，源文件放在view文件夹下</li>
+              <li>源文件放在src/service文件夹下</li>
             </ul>
           </Card>
           <div></div>
@@ -42,4 +40,4 @@ class IndexPage {
   }
 }
 
-export default ReferenceViewPage;
+export default ReferenceServicePage;
