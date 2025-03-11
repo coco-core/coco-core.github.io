@@ -1,7 +1,7 @@
 import {route, view} from "coco-mvc";
-import HeaderBar from "../view/header-bar";
-import SideMenu from "../view/side-menu";
-import Header1 from "../view/header-1";
+import HeaderBar from "../../view/header-bar";
+import SideMenu from "../../view/side-menu";
+import Header1 from "../../view/header-1";
 
 @route('/learn/typescript')
 @view()

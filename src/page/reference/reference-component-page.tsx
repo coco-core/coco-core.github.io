@@ -1,7 +1,7 @@
 import { view, route } from 'coco-mvc';
-import HeaderBar from "../view/header-bar";
-import SideMenu from "../view/side-menu";
-import Header2 from "../view/header-2";
+import HeaderBar from "../../view/header-bar";
+import SideMenu from "../../view/side-menu";
+import Header2 from "../../view/header-2";
 
 @route('/reference/component')
 @view()
