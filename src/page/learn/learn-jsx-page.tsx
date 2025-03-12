@@ -14,7 +14,7 @@ class LearnJsxPage {
         <div>
           <Header1>jsx</Header1>
           <div>
-            同React一样，coco-mvc的类组件同样使用jsx书写标签语法，学习参见：https://zh-hans.react.dev/learn/writing-markup-with-jsx
+            同React一样，coco-mvc同样使用jsx书写标签语法，学习参见：https://zh-hans.react.dev/learn/writing-markup-with-jsx
           </div>
         </div>
       </div>
