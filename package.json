@@ -4,7 +4,7 @@
   "description": "",
   "scripts": {
     "prepare": "ts-patch install -s",
-    "dev": "coco dev",
+    "dev": "NODE_ENV=dev coco dev",
     "build": "coco build"
   },
   "author": "",
