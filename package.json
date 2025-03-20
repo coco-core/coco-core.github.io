@@ -4,18 +4,19 @@
   "description": "",
   "scripts": {
     "prepare": "ts-patch install -s",
+    "predev": "node script/update-display-version.js",
     "dev": "NODE_ENV=dev coco dev",
     "build": "coco build"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@cocojs/cli": "^0.0.1-alpha202503092219",
+    "@cocojs/cli": "^0.0.1-alpha202503210708",
     "@cocojs/typescript-transformer": "^0.0.10",
     "ts-patch": "3.1.2",
     "typescript": "5.3.3"
   },
   "dependencies": {
-    "coco-mvc": "^0.0.1-alpha202503092219"
+    "coco-mvc": "^0.0.1-alpha202503210708"
   }
 }
