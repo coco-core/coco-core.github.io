@@ -1,10 +1,10 @@
 import { view, route } from 'coco-mvc';
-import HeaderBar from "../view/header-bar";
-import SideMenu from "../view/side-menu";
-import Header1 from "../view/header-1";
-import Header2 from "../view/header-2";
-import Card from "../view/card";
-import Code from "../view/code";
+import HeaderBar from "../../view/header-bar";
+import SideMenu from "../../view/side-menu";
+import Header1 from "../../view/header-1";
+import Header2 from "../../view/header-2";
+import Card from "../../view/card";
+import Code from "../../view/code";
 
 @route('/reference/view')
 @view()
@@ -24,7 +24,7 @@ class IndexPage {
         <SideMenu/>
         <div className={'flex-auto p-4'}>
           <Header1>@view</Header1>
-          <div>view既是class装饰器，也是method装饰器，共同申明一个视图类。</div>
+          <div>@view用于申明被装饰的类是视图类。</div>
           <Code code={this.code} />
           <Header2>装饰class</Header2>
           <div>表示将被装饰的类注册成视图组件，用于描述页面或组件</div>

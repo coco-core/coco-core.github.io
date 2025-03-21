@@ -1,10 +1,10 @@
 import { view, route } from 'coco-mvc';
-import HeaderBar from "../view/header-bar";
-import SideMenu from "../view/side-menu";
-import Header1 from "../view/header-1";
-import Card from "../view/card";
-import Header2 from "../view/header-2";
-import Code from "../view/code";
+import HeaderBar from "../../view/header-bar";
+import SideMenu from "../../view/side-menu";
+import Header1 from "../../view/header-1";
+import Card from "../../view/card";
+import Header2 from "../../view/header-2";
+import Code from "../../view/code";
 
 @route('/reference/reactive')
 @view()

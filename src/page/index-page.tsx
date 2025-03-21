@@ -10,8 +10,13 @@ class IndexPage {
   private router: Router;
 
   @bind()
-  handleClick() {
-    this.router.navigateTo('/reference/view')
+  clickReference() {
+    this.router.navigateTo('/reference/overview');
+  }
+
+  @bind()
+  clickQuickStart() {
+    this.router.navigateTo('/learn/style')
   }
 
   render() {
@@ -26,7 +31,9 @@ class IndexPage {
         </div>
       </div>
       <div className={'flex justify-center'}>
-        <Button label={'参考文档'} onClick={this.handleClick}></Button>
+        {/*<Button label={'快速上手'} onClick={this.clickQuickStart}></Button>*/}
+        <div className={'mx-2'} />
+        <Button label={'参考文档'} onClick={this.clickReference}></Button>
       </div>
     </div>
   }

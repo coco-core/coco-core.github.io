@@ -3,7 +3,6 @@ import {view} from 'coco-mvc';
 @view()
 class Header1 {
   props: {
-    label: string;
     children: string;
   }
 
