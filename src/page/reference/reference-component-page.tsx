@@ -2,6 +2,7 @@ import { view, route } from 'coco-mvc';
 import HeaderBar from "../../view/header-bar";
 import SideMenu from "../../view/side-menu";
 import Header2 from "../../view/header-2";
+import Header1 from "../../view/header-1";
 
 @route('/reference/component')
 @view()
@@ -12,7 +13,7 @@ class ReferenceComponentPage {
       <div className={'flex flex-row'}>
         <SideMenu/>
         <div>
-          <h1>@component</h1>
+          <Header1>@component</Header1>
           <Header2>装饰class</Header2>
           <div>使用component装饰的类会注册到ioc容器</div>
           <Header2>装饰method</Header2>

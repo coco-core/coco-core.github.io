@@ -6,6 +6,10 @@ class SideMenu {
 
   menu = [
     {
+      name: 'overview',
+      route: '/reference/overview',
+    },
+    {
       name: 'view',
       route: '/reference/view'
     },
