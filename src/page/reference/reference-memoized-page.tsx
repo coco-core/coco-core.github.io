@@ -21,7 +21,7 @@ class IndexPage {
     return <div className={'w-full pt-14'}>
       <HeaderBar/>
       <div className={'flex flex-row'}>
-        <SideMenu/>
+        <SideMenu type={'reference'} />
         <div className={'flex-auto p-4'}>
           <Header1>@memoized</Header1>
           <div>memoized是一个method装饰器，用于缓存一个被装饰方法的返回值。</div>

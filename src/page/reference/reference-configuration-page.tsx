@@ -9,7 +9,7 @@ class ReferenceConfigurationPage {
     return <div className={'w-full pt-14'}>
       <HeaderBar/>
       <div className={'flex flex-row'}>
-        <SideMenu/>
+        <SideMenu type={'reference'} />
         <div>
           <h1>@configuration</h1>
           <div>configuration装饰器用于装饰类，表明是一个配置类，配置类应该放在src/configuration目录下</div>

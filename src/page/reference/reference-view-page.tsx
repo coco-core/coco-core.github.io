@@ -21,7 +21,7 @@ class IndexPage {
     return <div className={'w-full pt-14'}>
       <HeaderBar/>
       <div className={'flex flex-row'}>
-        <SideMenu/>
+        <SideMenu type={'reference'} />
         <div className={'flex-auto p-4'}>
           <Header1>@view</Header1>
           <div>@view用于申明被装饰的类是视图类。</div>

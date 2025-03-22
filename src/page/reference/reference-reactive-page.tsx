@@ -21,7 +21,7 @@ class IndexPage {
     return <div className={'w-full pt-14'}>
       <HeaderBar/>
       <div className={'flex flex-row'}>
-        <SideMenu/>
+        <SideMenu type={'reference'} />
         <div className={'flex-auto p-4'}>
           <Header1>@reactive</Header1>
           <div>reactive是field装饰器，用于给组件添加一个响应式字段。</div>

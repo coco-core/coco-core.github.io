@@ -19,7 +19,7 @@ npx @cocojs/cli create
       <div className={'flex flex-row'}>
         <SideMenu/>
         <div>
-          <Header1>创建一个coco-mvc项目</Header1>
+          <Header1>创建项目</Header1>
           <Header2>环境准备</Header2>
           <div>首先本地需要node环境，推荐node18lts及以上，官网：https://nodejs.org/zh-cn/download。</div>
           <Header2>创建项目</Header2>

@@ -9,7 +9,7 @@ class ReferenceAutowiredPage {
     return <div className={'w-full pt-14'}>
       <HeaderBar/>
       <div className={'flex flex-row'}>
-        <SideMenu/>
+        <SideMenu type={'reference'} />
         <div>
           <h1>@autowired</h1>
           <div>autowired装饰器用于装饰字段，用于自动注入配置的组件</div>

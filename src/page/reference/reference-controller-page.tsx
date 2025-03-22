@@ -21,7 +21,7 @@ class UserController {
     return <div className={'w-full pt-14'}>
       <HeaderBar/>
       <div className={'flex flex-row'}>
-        <SideMenu/>
+        <SideMenu type={'reference'} />
         <div className={'flex-auto p-4'}>
           <Header1>@controller</Header1>
           <div>controller用于申明被装饰的类是某个模块的控制层类，控制层也是业务逻辑层，一般会调用多个服务类共同完成某个模块的工作。</div>

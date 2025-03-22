@@ -11,7 +11,7 @@ class ReferenceComponentPage {
     return <div className={'w-full pt-14'}>
       <HeaderBar/>
       <div className={'flex flex-row'}>
-        <SideMenu/>
+        <SideMenu type={'reference'} />
         <div>
           <Header1>@component</Header1>
           <Header2>装饰class</Header2>

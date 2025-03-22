@@ -10,7 +10,7 @@ class ReferenceStorePage {
     return <div className={'w-full pt-14'}>
       <HeaderBar/>
       <div className={'flex flex-row'}>
-        <SideMenu/>
+        <SideMenu type={'reference'} />
         <div>
           <Header1>@store</Header1>
           <div>store装饰类用于将一个类定义成全局状态，当修改全局状态是，所有引入此全局状态的view都会重新渲染。</div>

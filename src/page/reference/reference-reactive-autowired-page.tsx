@@ -10,7 +10,7 @@ class ReferenceReactiveAutowiredPage {
     return <div className={'w-full pt-14'}>
       <HeaderBar/>
       <div className={'flex flex-row'}>
-        <SideMenu/>
+        <SideMenu type={'reference'} />
         <div>
           <Header1>@reactiveAutowired装饰器</Header1>
           <div>reactiveAutowired声明一个field是响应式的，修改field就会触发页面的重新渲染。</div>

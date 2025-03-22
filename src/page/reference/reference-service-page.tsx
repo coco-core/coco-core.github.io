@@ -21,7 +21,7 @@ class UserService {
     return <div className={'w-full pt-14'}>
       <HeaderBar/>
       <div className={'flex flex-row'}>
-        <SideMenu/>
+        <SideMenu type={'reference'} />
         <div className={'flex-auto p-4'}>
           <Header1>@service</Header1>
           <div>service用于申明被装饰的类是服务类，服务类比较内聚，只关心本服务相关的业务。</div>
