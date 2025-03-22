@@ -146,11 +146,11 @@ class LocalStorageService {
               TypeScript提供了良好的静态类型校验能力和提醒功能，且coco-mvc依赖TypeScript的transformer能力，所以coco-mvc项目全部使用Ts编写。Ts官网：https://www.typescriptlang.org/
             </li>
             <li>
-              <span className={'text-blue-600'}>jsx</span>
-              同React一样，coco-mvc同样使用jsx书写标签语法，学习参见：https://zh-hans.react.dev/learn/writing-markup-with-jsx
+              <span className={'text-blue-600'}>JSX</span>
+              同React一样，coco-mvc同样使用JSX书写标签语法，学习参见：https://zh-hans.react.dev/learn/writing-markup-with-jsx
             </li>
             <li>
-              <span className={'text-blue-600'}>tailwindcss</span>
+              <span className={'text-blue-600'}>Tailwindcss</span>
               框架已经内置Tailwindcss，因为Tailwindcss和coco-mvc推荐的一个文件一个类的思想非常契合。Tailwindcss官网：https://tailwindcss.com/
             </li>
           </ul>
