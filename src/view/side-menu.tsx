@@ -79,6 +79,10 @@ class SideMenu {
       name: 'webApplication',
       route: '/reference/webApplication'
     },
+    {
+      name: '命令行',
+      route: '/reference/command'
+    },
   ]
 
   @autowired()
