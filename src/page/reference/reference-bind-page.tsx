@@ -21,7 +21,7 @@ class IndexPage {
     return <div className={'w-full pt-14'}>
       <HeaderBar/>
       <div className={'flex flex-row'}>
-        <SideMenu/>
+        <SideMenu type={'reference'} />
         <div className={'flex-auto p-4'}>
           <Header1>@bind</Header1>
           <div>bind是method装饰器，用于绑定被装饰方法的this到当前实例</div>

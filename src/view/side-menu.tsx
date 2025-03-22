@@ -3,10 +3,28 @@ import SideMenuItem from "./side-menu-item";
 
 @view()
 class SideMenu {
+  props: {
+    type: 'reference' | 'learn'
+  } = { type: 'reference' }
 
-  menu = [
+  learnMenu = [
     {
-      name: 'overview',
+      name: '总览',
+      route: '/learn/overview',
+    },
+    {
+      name: '创建项目',
+      route: '/learn/create-project',
+    },
+    {
+      name: '目录结构',
+      route: '/learn/directory-structure',
+    },
+  ]
+
+  referenceMenu = [
+    {
+      name: '总览',
       route: '/reference/overview',
     },
     {
@@ -75,7 +93,7 @@ class SideMenu {
 
   render() {
     return <div className='p-4'>
-      {this.menu.map(i => {
+      {(this.props.type === 'reference' ? this.referenceMenu : this.learnMenu).map(i => {
         return <SideMenuItem
           active={this.router.pathname === i.route}
           label={i.name}

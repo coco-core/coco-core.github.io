@@ -7,7 +7,7 @@ import SideMenu from "../../view/side-menu";
 class ReferenceGlobalDataPage {
   render() {
     return <div className={'w-full pt-14'}>
-      <HeaderBar/>
+      <SideMenu type={'reference'} />
       <div className={'flex flex-row'}>
         <SideMenu/>
         <div>

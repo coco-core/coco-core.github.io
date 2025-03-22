@@ -10,7 +10,7 @@ class ReferenceTargetPage {
     return <div className={'w-full pt-14'}>
       <HeaderBar/>
       <div className={'flex flex-row'}>
-        <SideMenu/>
+        <SideMenu type={'reference'} />
         <div>
           <Header1>@target</Header1>
           <div>target装饰器只用于装饰元数据类，用于标记元数据对应的装饰器的装饰目标。</div>

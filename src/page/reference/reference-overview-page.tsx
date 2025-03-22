@@ -11,7 +11,7 @@ class ReferenceOverviewPage {
     return <div className={'w-full pt-14'}>
       <HeaderBar/>
       <div className={'flex flex-row'}>
-        <SideMenu/>
+        <SideMenu type={'reference'} />
         <div>
           <Header1>总览</Header1>
           <div>本部分提供框架暴露的装饰器的详尽说明</div>

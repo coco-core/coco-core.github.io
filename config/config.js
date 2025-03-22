@@ -4,6 +4,7 @@ const process = require("node:process");
 const config = {
   "webpack": {
     "output": {
+      publicPath: '/',
       "path": path.join(process.cwd(), "docs")
     }
   }

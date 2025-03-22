@@ -15,6 +15,11 @@ class HeaderBar {
   }
 
   @bind()
+  clickLearn() {
+    this.router.navigateTo('/learn/overview');
+  }
+
+  @bind()
   clickVersion() {
     this.router.navigateTo("/")
   }
@@ -27,7 +32,7 @@ class HeaderBar {
         <span className={'font-bold text-amber-800'}>（内部预览版，请不要用于生产环境！)</span>
       </div>
       <div className={'flex justify-center'}>
-        {/*<div className={'mx-2 cursor-pointer'}>教程</div>*/}
+        <div className={'mx-2 cursor-pointer'} onClick={this.clickLearn}>教程</div>
         <div className={'mx-2 cursor-pointer'} onClick={this.clickReference}>参考</div>
         <div className={'mx-2 cursor-pointer'} onClick={this.clickGithub}>github</div>
       </div>

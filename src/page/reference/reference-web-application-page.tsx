@@ -10,7 +10,7 @@ class ReferenceApplicationPage {
     return <div className={'w-full pt-14'}>
       <HeaderBar/>
       <div className={'flex flex-row'}>
-        <SideMenu/>
+        <SideMenu type={'reference'} />
         <div>
           <Header1>@webApplication</Header1>
           <div>webApplication装饰器只能装饰类，表明这个应用是一个coco-mvc应用</div>

@@ -43,7 +43,7 @@ class B {
     return <div className={'w-full pt-14'}>
       <HeaderBar/>
       <div className={'flex flex-row'}>
-        <SideMenu/>
+        <SideMenu type={'reference'} />
         <div>
           <Header1>@ref</Header1>
           <Header2>装饰field</Header2>

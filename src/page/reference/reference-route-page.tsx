@@ -10,7 +10,7 @@ class ReferenceRoutePage {
     return <div className={'w-full pt-14'}>
       <HeaderBar/>
       <div className={'flex flex-row'}>
-        <SideMenu/>
+        <SideMenu type={'reference'} />
         <div>
           <Header1>@route</Header1>
           <div>route装饰器定义一个url地址，关联某个页面和url。</div>

@@ -9,7 +9,7 @@ class ReferenceInitPage {
     return <div className={'w-full pt-14'}>
       <HeaderBar/>
       <div className={'flex flex-row'}>
-        <SideMenu/>
+        <SideMenu type={'reference'} />
         <div>
           <h1>@init</h1>
           <div>init装饰器装饰方法，用于标记ioc组件的初始化方法。</div>
