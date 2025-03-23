@@ -14,6 +14,7 @@
   "devDependencies": {
     "@cocojs/cli": "^0.0.1-alpha202503231918",
     "@cocojs/typescript-transformer": "^0.0.10",
+    "copy-webpack-plugin": "^13.0.0",
     "ts-patch": "3.1.2",
     "typescript": "5.3.3"
   },
