@@ -18,6 +18,6 @@
   },
   "dependencies": {
     "coco-mvc": "^0.0.1-alpha202503210708",
-    "cocojs-component-demo": "^0.0.1"
+    "cocojs-component-demo": "^0.0.3"
   }
 }
