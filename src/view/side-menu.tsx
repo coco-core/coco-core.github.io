@@ -20,6 +20,10 @@ class SideMenu {
       name: '目录结构',
       route: '/learn/directory-structure',
     },
+    {
+      name: '路由',
+      route: '/learn/router',
+    },
   ]
 
   referenceMenu = [
@@ -80,6 +84,14 @@ class SideMenu {
       route: '/reference/webApplication'
     },
     {
+      name: '浏览器组件',
+      route: '/reference/web-component'
+    },
+    {
+      name: '视图组件',
+      route: '/reference/view-component'
+    },
+    {
       name: '命令行',
       route: '/reference/command'
     },
@@ -96,7 +108,7 @@ class SideMenu {
   }
 
   render() {
-    return <div className='p-4'>
+    return <div className='w-[200px] flex-none p-4'>
       {(this.props.type === 'reference' ? this.referenceMenu : this.learnMenu).map(i => {
         return <SideMenuItem
           active={this.router.pathname === i.route}

@@ -14,40 +14,49 @@ class ReferenceOverviewPage {
         <SideMenu type={'reference'} />
         <div>
           <Header1>总览</Header1>
-          <div>本部分提供框架暴露的装饰器的详尽说明</div>
-          <Header2>基础</Header2>
-          <ul>
-            <li><span className={'text-blue-600'}>autowired</span>自动注入</li>
-            <li><span className={'text-blue-600'}>reactiveAutowired</span>响应式自动注入</li>
-            <li><span className={'text-blue-600'}>component</span>组件化</li>
-            <li><span className={'text-blue-600'}>target</span>控制装饰目标范围</li>
-          </ul>
-          <Header2>mvc层次控制</Header2>
+          <Header2>装饰器</Header2>
+          框架内置装饰器
           <ul>
             <li><span className={'text-blue-600'}>view</span>视图</li>
             <li><span className={'text-blue-600'}>page</span>页面</li>
             <li><span className={'text-blue-600'}>controller</span>控制器</li>
             <li><span className={'text-blue-600'}>service</span>服务</li>
+            <li><span className={'text-blue-600'}>component</span>通用组件</li>
           </ul>
-          <Header2>视图层</Header2>
+
           <ul>
             <li><span className={'text-blue-600'}>reactive</span>响应式</li>
             <li><span className={'text-blue-600'}>bind</span>this绑定</li>
             <li><span className={'text-blue-600'}>memoized</span>缓存</li>
             <li><span className={'text-blue-600'}>ref</span>直接引用组件</li>
-            <li><span className={'text-blue-600'}>init</span>初始化工作</li>
-            <li><span className={'text-blue-600'}>start</span>启动函数</li>
           </ul>
-          <Header2>数据</Header2>
           <ul>
-            <li><span className={'text-blue-600'}>store</span>全局状态</li>
             <li><span className={'text-blue-600'}>globalData</span>全局数据</li>
+            <li><span className={'text-blue-600'}>autowired</span>自动注入</li>
+            <li><span className={'text-blue-600'}>store</span>全局状态</li>
+            <li><span className={'text-blue-600'}>reactiveAutowired</span>自动注入全局状态</li>
           </ul>
-          <Header2>其他</Header2>
           <ul>
             <li><span className={'text-blue-600'}>webApplication</span>应用入口</li>
+            <li><span className={'text-blue-600'}>target</span>控制装饰目标范围</li>
             <li><span className={'text-blue-600'}>route</span>路由</li>
             <li><span className={'text-blue-600'}>configuration</span>配置类</li>
+            <li><span className={'text-blue-600'}>value</span>运行时配置取值</li>
+          </ul>
+          <Header2>类</Header2>
+          框架内置一些类，用于开发时自动注入
+          <ul>
+            <li><span className={'text-blue-600'}>Router</span>路由类</li>
+          </ul>
+          <Header2>视图组件</Header2>
+          框架支持的视图组件说明
+          <ul>
+            <li><span className={'text-blue-600'}>浏览器组件</span></li>
+            <li><span className={'text-blue-600'}>类组件</span></li>
+          </ul>
+          <Header2>CLI</Header2>
+          <ul>
+            <li><span className={'text-blue-600'}>命令行</span></li>
           </ul>
         </div>
       </div>

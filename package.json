@@ -1,7 +1,7 @@
 {
   "name": "demo",
   "version": "1.0.0",
-  "description": "",
+  "description": "官网",
   "scripts": {
     "prepare": "ts-patch install -s",
     "predev": "node script/update-display-version.js",
@@ -17,6 +17,7 @@
     "typescript": "5.3.3"
   },
   "dependencies": {
-    "coco-mvc": "^0.0.1-alpha202503210708"
+    "coco-mvc": "^0.0.1-alpha202503210708",
+    "cocojs-component-demo": "^0.0.1"
   }
 }

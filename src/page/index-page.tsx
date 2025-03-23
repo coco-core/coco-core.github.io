@@ -1,6 +1,7 @@
 import {view, route, Router, autowired, bind} from 'coco-mvc';
+import { Button } from 'cocojs-component-demo'
 import HeaderBar from "../view/header-bar";
-import Button from '../view/button'
+// import Button from '../view/button'
 
 @route('/')
 @view()
@@ -31,9 +32,9 @@ class IndexPage {
         </div>
       </div>
       <div className={'flex justify-center'}>
-        <Button label={'快速上手'} onClick={this.clickQuickStart}></Button>
+        <Button onClick={this.clickQuickStart}>快速上手</Button>
         <div className={'mx-2'} />
-        <Button label={'参考文档'} onClick={this.clickReference}></Button>
+        <Button onClick={this.clickReference}>参考文档</Button>
       </div>
     </div>
   }

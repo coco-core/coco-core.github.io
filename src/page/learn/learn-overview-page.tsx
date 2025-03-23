@@ -126,13 +126,13 @@ class LocalStorageService {
             </tr>
             <tr>
               <td>控制层</td>
-              <td>1.为视图层提供接口；2.业务逻辑</td>
-              <td>1.UI交互；2.服务具体实现</td>
+              <td>1.为视图层提供接口；2.业务流程及流转控制</td>
+              <td>1.UI；2.业务具体实现</td>
             </tr>
             <tr>
               <td>服务层</td>
               <td>1.为控制层提供接口；2.本服务具体实现</td>
-              <td>1.业务逻辑</td>
+              <td>1.UI；2.业务流程</td>
             </tr>
             </tbody>
           </table>
