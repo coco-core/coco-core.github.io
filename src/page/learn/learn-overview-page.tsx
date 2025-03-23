@@ -22,6 +22,7 @@ class Button () {
 @view()  
 class Button () {
   
+  @autowired()
   loginControler: LoginController;
   
   clickLogin() {
@@ -43,7 +44,10 @@ class Button () {
   code2 = `
 @controller()  
 class LoginController {
+  @autowired()
   loginService: LoginService;
+
+  @autowired()
   localStorageService: LocalStorageService;
   
   login() {
@@ -84,14 +88,14 @@ class LocalStorageService {
         <div>
           <Header1>总览</Header1>
           <Header2>什么是coco-mvc？</Header2>
-          <div>coco-mvc（coco是coconut的缩写）是一个Web框架，帮助用户构建可扩展的Web应用。主要特性：</div>
+          <div>coco-mvc（coco是coconut的缩写）是一个Web框架，帮助开发者构建可扩展的Web应用。主要特性：</div>
           <ul>
             <li>装饰器</li>
             <li>MVC</li>
             <li>约定大于配置</li>
           </ul>
           <Header2>装饰器</Header2>
-          装饰器是一种设计模式，允许程序员在不改变代码结构的前提下扩展类的功能。
+          装饰器是一种设计模式，允许开发者在不改变代码结构的前提下扩展类的功能。
           <div>一个简单的例子：</div>
           <Code code={this.code} />
           Button是一个普通的类，这里添加了view装饰器，表示Button就是一个用于描述页面的视图类组件。

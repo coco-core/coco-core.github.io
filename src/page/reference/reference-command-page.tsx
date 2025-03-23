@@ -4,6 +4,7 @@ import SideMenu from "../../view/side-menu";
 import Header1 from "../../view/header-1";
 import Header2 from "../../view/header-2";
 import Code from "../../view/code";
+import Card from "../../view/card";
 
 @route('/reference/command')
 @view()
@@ -39,9 +40,11 @@ coco build lib
           <Header2>build</Header2>
           打包Web应用
           <Code code={this.code1} />
+          <Card>默认额外加载prod配置文件</Card>
           <Header2>dev</Header2>
           本地开发
           <Code code={this.code2} />
+          <Card>默认额外加载dev配置文件</Card>
           <Header2>create lib</Header2>
           在当前目录下创建一个组件库
           <Code code={this.code3} />

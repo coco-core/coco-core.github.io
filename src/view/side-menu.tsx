@@ -21,6 +21,10 @@ class SideMenu {
       route: '/learn/directory-structure',
     },
     {
+      name: '配置和环境变量',
+      route: '/learn/config',
+    },
+    {
       name: '路由',
       route: '/learn/router',
     },
