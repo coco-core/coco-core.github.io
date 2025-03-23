@@ -17,6 +17,8 @@ function updateDisplayVersion() {
       const newHeaderBar = headerBar.replace(match[0], newVersionSpan);
       fs.writeFileSync(filePath, newHeaderBar);
     }
+  } else {
+    throw new Error('更新header-bar组件中的版本好失败！');
   }
 }
 

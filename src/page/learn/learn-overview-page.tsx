@@ -22,6 +22,7 @@ class Button () {
 @view()  
 class Button () {
   
+  @autowired()
   loginControler: LoginController;
   
   clickLogin() {
@@ -43,7 +44,10 @@ class Button () {
   code2 = `
 @controller()  
 class LoginController {
+  @autowired()
   loginService: LoginService;
+
+  @autowired()
   localStorageService: LocalStorageService;
   
   login() {
@@ -84,14 +88,14 @@ class LocalStorageService {
         <div>
           <Header1>总览</Header1>
           <Header2>什么是coco-mvc？</Header2>
-          <div>coco-mvc（coco是coconut的缩写）是一个Web框架，帮助用户构建可扩展的Web应用。主要特性：</div>
+          <div>coco-mvc（coco是coconut的缩写）是一个Web框架，帮助开发者构建可扩展的Web应用。主要特性：</div>
           <ul>
             <li>装饰器</li>
             <li>MVC</li>
             <li>约定大于配置</li>
           </ul>
           <Header2>装饰器</Header2>
-          装饰器是一种设计模式，允许程序员在不改变代码结构的前提下扩展类的功能。
+          装饰器是一种设计模式，允许开发者在不改变代码结构的前提下扩展类的功能。
           <div>一个简单的例子：</div>
           <Code code={this.code} />
           Button是一个普通的类，这里添加了view装饰器，表示Button就是一个用于描述页面的视图类组件。
@@ -126,13 +130,13 @@ class LocalStorageService {
             </tr>
             <tr>
               <td>控制层</td>
-              <td>1.为视图层提供接口；2.业务逻辑</td>
-              <td>1.UI交互；2.服务具体实现</td>
+              <td>1.为视图层提供接口；2.业务流程及流转控制</td>
+              <td>1.UI；2.业务具体实现</td>
             </tr>
             <tr>
               <td>服务层</td>
               <td>1.为控制层提供接口；2.本服务具体实现</td>
-              <td>1.业务逻辑</td>
+              <td>1.UI；2.业务流程</td>
             </tr>
             </tbody>
           </table>
@@ -146,11 +150,11 @@ class LocalStorageService {
               TypeScript提供了良好的静态类型校验能力和提醒功能，且coco-mvc依赖TypeScript的transformer能力，所以coco-mvc项目全部使用Ts编写。Ts官网：https://www.typescriptlang.org/
             </li>
             <li>
-              <span className={'text-blue-600'}>jsx</span>
-              同React一样，coco-mvc同样使用jsx书写标签语法，学习参见：https://zh-hans.react.dev/learn/writing-markup-with-jsx
+              <span className={'text-blue-600'}>JSX</span>
+              同React一样，coco-mvc同样使用JSX书写标签语法，学习参见：https://zh-hans.react.dev/learn/writing-markup-with-jsx
             </li>
             <li>
-              <span className={'text-blue-600'}>tailwindcss</span>
+              <span className={'text-blue-600'}>Tailwindcss</span>
               框架已经内置Tailwindcss，因为Tailwindcss和coco-mvc推荐的一个文件一个类的思想非常契合。Tailwindcss官网：https://tailwindcss.com/
             </li>
           </ul>
