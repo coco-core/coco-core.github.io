@@ -1,27 +1,27 @@
-import {route, view} from "coco-mvc";
-import HeaderBar from "../../view/header-bar";
+import {route, page} from "coco-mvc";
 import SideMenu from "../../view/side-menu";
 import Header1 from "../../view/header-1";
-import Header2 from "../../view/header-2";
 import Code from "../../view/code";
+import ContentLayout from "../../layout/content-layout";
 
 @route('/learn/directory-structure')
-@view()
+@page()
 class LearnDirectoryStructurePage {
   code = `
 root
  |-- config // 非运行时配置根目录
- |-- properties  // 运行时配置文件根目录
+ |-- properties  // 运行时配置根目录
  |
  |-- src
  |   |
  |   |-- .coco // 运行时文件夹(由框架生成)
  |   |
+ |   |-- layout // 布局类组件根目录
+ |   |
  |   |-- page // 页面组件根目录
  |   |    |-- login-page.tsx
  |   |    
- |   |-- view  // 非页面视图组件默认根目录
- |   |    |-- layout.tsx
+ |   |-- view  // 非特定视图组件根目录
  |   |    
  |   |-- controller // 控制类组件根目录
  |   |    |-- user-controller.ts
@@ -37,23 +37,16 @@ root
  |
  |-- packages.json
  |-- tsconfig.json
- |-- webpack.config.js
- |-- postcss.config.js
- |-- babel.config.js
+ |-- tailwind.config.js
+ |-- .gitignore
 `
 
   render() {
-    return <div className={'w-full pt-14'}>
-      <HeaderBar />
-      <div className={'flex flex-row'}>
-        <SideMenu/>
-        <div>
-          <Header1>目录结构</Header1>
-          <div>coco-mvc项目大部分的目录都是固定的，这有助于减少沟通成本，具体如下：</div>
-          <Code code={this.code} />
-        </div>
-      </div>
-    </div>
+    return <ContentLayout sideMenu={<SideMenu />}>
+      <Header1>目录结构</Header1>
+      <div>coco-mvc项目大部分的目录都是固定的，这有助于减少沟通成本，具体如下：</div>
+      <Code code={this.code} />
+    </ContentLayout>
   }
 }
 

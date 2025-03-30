@@ -1,22 +1,16 @@
-import { view, route } from 'coco-mvc';
-import HeaderBar from "../../view/header-bar";
+import { page, route } from 'coco-mvc';
 import SideMenu from "../../view/side-menu";
 import Header1 from "../../view/header-1";
+import ContentLayout from "../../layout/content-layout";
 
 @route('/reference/target')
-@view()
+@page()
 class ReferenceTargetPage {
   render() {
-    return <div className={'w-full pt-14'}>
-      <HeaderBar/>
-      <div className={'flex flex-row'}>
-        <SideMenu type={'reference'} />
-        <div>
-          <Header1>@target</Header1>
-          <div>target装饰器只用于装饰元数据类，用于标记元数据对应的装饰器的装饰目标。</div>
-        </div>
-      </div>
-    </div>
+    return <ContentLayout sideMenu={<SideMenu type={'reference'} />}>
+      <Header1>@target</Header1>
+      <div>target装饰器只用于装饰元数据类，用于标记元数据对应的装饰器的装饰目标。</div>
+    </ContentLayout>
   }
 }
 

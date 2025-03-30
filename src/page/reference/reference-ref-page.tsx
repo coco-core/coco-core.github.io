@@ -1,12 +1,12 @@
-import { view, route } from 'coco-mvc';
-import HeaderBar from "../../view/header-bar";
+import { page, route } from 'coco-mvc';
 import SideMenu from "../../view/side-menu";
 import Header2 from "../../view/header-2";
 import Code from "../../view/code";
 import Header1 from "../../view/header-1";
+import ContentLayout from "../../layout/content-layout";
 
 @route('/reference/ref')
-@view()
+@page()
 class ReferenceRefPage {
   code = `
 class A {
@@ -40,20 +40,14 @@ class B {
   `;
 
   render() {
-    return <div className={'w-full pt-14'}>
-      <HeaderBar/>
-      <div className={'flex flex-row'}>
-        <SideMenu type={'reference'} />
-        <div>
-          <Header1>@ref</Header1>
-          <Header2>装饰field</Header2>
-          <div>使用@ref引用单个dom元素或者子组件</div>
-          <Code code={this.code} />
-          <div>使用@refs引用多个dom元素或者子组件</div>
-          <Code code={this.code1} />
-        </div>
-      </div>
-    </div>
+    return <ContentLayout sideMenu={<SideMenu type={'reference'} />}>
+      <Header1>@ref</Header1>
+      <Header2>装饰field</Header2>
+      <div>使用@ref引用单个dom元素或者子组件</div>
+      <Code code={this.code} />
+      <div>使用@refs引用多个dom元素或者子组件</div>
+      <Code code={this.code1} />
+    </ContentLayout>
   }
 }
 

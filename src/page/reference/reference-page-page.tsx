@@ -6,31 +6,31 @@ import Card from "../../view/card";
 import Code from "../../view/code";
 import ContentLayout from "../../layout/content-layout";
 
-@route('/reference/service')
+@route('/reference/page')
 @page()
-class ReferenceServicePage {
+class ReferencePagePage {
   code = `
-@service()
-class UserService {
-  async login() {}
-  
-  async logout() {}
+@page()
+class IndexPage {
+  render() {
+    return <div>hello world</div>
+  }
 }
   `
   render() {
     return <ContentLayout sideMenu={<SideMenu type={'reference'} />}>
-      <Header1>@service</Header1>
-      <div>service用于申明被装饰的类是服务类，服务类比较内聚，只关心本服务相关的业务。</div>
-      <Header2>装饰class</Header2>
+      <Header1>@page</Header1>
+      <div>@page用于申明被装饰的类是页面类。</div>
       <Code code={this.code} />
+      <Header2>装饰class</Header2>
       <Card>
         <div>注意</div>
         <ul>
-          <li>源文件放在src/service文件夹下</li>
+          <li>源文件放在src/page文件夹下</li>
         </ul>
       </Card>
     </ContentLayout>
   }
 }
 
-export default ReferenceServicePage;
+export default ReferencePagePage;

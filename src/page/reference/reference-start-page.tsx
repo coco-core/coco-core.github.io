@@ -1,21 +1,15 @@
-import { view, route } from 'coco-mvc';
-import HeaderBar from "../../view/header-bar";
+import { page, route } from 'coco-mvc';
 import SideMenu from "../../view/side-menu";
+import ContentLayout from "../../layout/content-layout";
 
 @route('/reference/start')
-@view()
+@page()
 class ReferenceStartPage {
   render() {
-    return <div className={'w-full pt-14'}>
-      <HeaderBar/>
-      <div className={'flex flex-row'}>
-        <SideMenu type={'reference'} />
-        <div>
-          <h1>@start</h1>
-          <div>start装饰器装饰方法，用于标记ioc组件的启动方法。</div>
-        </div>
-      </div>
-    </div>
+    return <ContentLayout sideMenu={<SideMenu type={'reference'} />}>
+      <h1>@start</h1>
+      <div>start装饰器装饰方法，用于标记ioc组件的启动方法。</div>
+    </ContentLayout>
   }
 }
 

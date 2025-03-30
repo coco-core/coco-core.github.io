@@ -40,6 +40,14 @@ class SideMenu {
       route: '/reference/view'
     },
     {
+      name: 'page',
+      route: '/reference/page'
+    },
+    {
+      name: 'layout',
+      route: '/reference/layout'
+    },
+    {
       name: 'controller',
       route: '/reference/controller'
     },
