@@ -1,11 +1,11 @@
 import { page, route } from 'coco-mvc';
-import SideMenu from "../../view/side-menu";
-import Header1 from "../../view/header-1";
-import Header2 from "../../view/header-2";
-import Card from "../../view/card";
-import Code from "../../view/code";
-import ContentLayout from "../../layout/content-layout";
-import HeaderBar from "../../view/header-bar";
+import SideMenu from "@/view/side-menu";
+import Header1 from "@/view/header-1";
+import Header2 from "@/view/header-2";
+import Card from "@/view/card";
+import Code from "@/view/code";
+import ContentLayout from "@/layout/content-layout";
+import HeaderBar from "@/view/header-bar";
 
 @route('/reference/layout')
 @page()

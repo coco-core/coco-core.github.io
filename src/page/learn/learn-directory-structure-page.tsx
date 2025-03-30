@@ -1,8 +1,8 @@
 import {route, page} from "coco-mvc";
-import SideMenu from "../../view/side-menu";
-import Header1 from "../../view/header-1";
-import Code from "../../view/code";
-import ContentLayout from "../../layout/content-layout";
+import SideMenu from "@/view/side-menu";
+import Header1 from "@/view/header-1";
+import Code from "@/view/code";
+import ContentLayout from "@/layout/content-layout";
 
 @route('/learn/directory-structure')
 @page()

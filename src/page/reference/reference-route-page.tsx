@@ -1,7 +1,7 @@
 import { page, route } from 'coco-mvc';
-import SideMenu from "../../view/side-menu";
-import Header1 from "../../view/header-1";
-import ContentLayout from "../../layout/content-layout";
+import SideMenu from "@/view/side-menu";
+import Header1 from "@/view/header-1";
+import ContentLayout from "@/layout/content-layout";
 
 @route('/reference/route')
 @page()

@@ -1,5 +1,5 @@
 import {layout} from "coco-mvc";
-import HeaderBar from "../view/header-bar";
+import HeaderBar from "@/view/header-bar";
 
 @layout()
 class ContentLayout {

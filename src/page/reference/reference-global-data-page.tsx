@@ -1,5 +1,5 @@
 import { page, route } from 'coco-mvc';
-import SideMenu from "../../view/side-menu";
+import SideMenu from "@/view/side-menu";
 import ContentLayout from "../../layout/content-layout";
 
 @route('/reference/global-data')
