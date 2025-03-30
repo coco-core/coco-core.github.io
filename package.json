@@ -12,13 +12,14 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@cocojs/cli": "^0.0.1-alpha202503231918",
+    "@cocojs/cli": "^0.0.1-alpha202503302111",
     "@cocojs/typescript-transformer": "^0.0.10",
+    "copy-webpack-plugin": "^13.0.0",
     "ts-patch": "3.1.2",
     "typescript": "5.3.3"
   },
   "dependencies": {
-    "coco-mvc": "^0.0.1-alpha202503231918",
+    "coco-mvc": "^0.0.1-alpha202503302111",
     "cocojs-component-demo": "^0.0.3"
   }
 }

@@ -6,32 +6,31 @@ import Card from "@/view/card";
 import Code from "@/view/code";
 import ContentLayout from "@/layout/content-layout";
 
-@route('/reference/view')
+@route('/reference/page')
 @page()
-class ReferenceViewPage {
+class ReferencePagePage {
   code = `
-@view()
-class Button {
+@page()
+class IndexPage {
   render() {
-    return <button>提交</button>
+    return <div>hello world</div>
   }
 }
   `
   render() {
     return <ContentLayout sideMenu={<SideMenu type={'reference'} />}>
-      <Header1>@view</Header1>
-      <div>@view用于申明被装饰的类是视图类。</div>
+      <Header1>@page</Header1>
+      <div>@page用于申明被装饰的类是页面类。</div>
       <Code code={this.code} />
       <Header2>装饰class</Header2>
-      <div>表示将被装饰的类注册成视图组件</div>
       <Card>
         <div>注意</div>
         <ul>
-          <li>如果描述组件，源文件放在view文件夹下</li>
+          <li>源文件放在src/page文件夹下</li>
         </ul>
       </Card>
     </ContentLayout>
   }
 }
 
-export default ReferenceViewPage;
+export default ReferencePagePage;

@@ -1,9 +1,9 @@
-import {view, route, Router, autowired, bind} from 'coco-mvc';
+import {page, route, Router, autowired, bind} from 'coco-mvc';
 import { Button } from 'cocojs-component-demo'
-import HeaderBar from "../view/header-bar";
+import HeaderBar from "@/view/header-bar";
 
 @route('/')
-@view()
+@page()
 class IndexPage {
 
   @autowired()
