@@ -17,6 +17,10 @@ class SideMenu {
       route: '/learn/view-component',
     },
     {
+      name: '服务组件',
+      route: '/learn/service-component',
+    },
+    {
       name: '创建项目',
       route: '/learn/create-project',
     },

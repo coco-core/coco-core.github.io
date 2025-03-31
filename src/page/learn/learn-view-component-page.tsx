@@ -89,6 +89,7 @@ class Button () {
   render() {
     return <ContentLayout sideMenu={<SideMenu />}>
       <Header1>视图组件</Header1>
+      <div>视图组件就是描述页面的组件，小到一个字一个div，大到一个表单一个页面都是视图组件。视图组件的核心就是绘制页面，响应用户输入。</div>
       <Header2>@view</Header2>
       <div>下面给出了一个简单的点赞按钮组件：</div>
       <Code code={this.code} />
@@ -124,6 +125,18 @@ class Button () {
       <Card>
         @memoized()装饰的方法也会自动绑定this到当前实例，不需要添加@bind()
       </Card>
+      <Header1>生命周期函数</Header1>
+      <ul>
+        <li><span className={'text-blue-600'}>componentDidMount</span>组件首次挂载成功后触发。</li>
+        <li><span className={'text-blue-600'}>componentDidUpdate</span>组件的props发生变化时触发。</li>
+        <li><span className={'text-blue-600'}>componentWillUnmount</span>组件即将销毁前触发。</li>
+      </ul>
+      <Header1>其他装饰器</Header1>
+      <div>除了view装饰器用于声明通用的视图组件，coco-mvc还提供了具有特定业务含义的视图装饰器：</div>
+      <ul>
+        <li><span className={'text-blue-600'}>@page()</span>用于声明一个页面。</li>
+        <li><span className={'text-blue-600'}>@layout()</span>用于声明一个布局。</li>
+      </ul>
     </ContentLayout>
   }
 }
