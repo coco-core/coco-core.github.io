@@ -13,6 +13,10 @@ class SideMenu {
       route: '/learn/overview',
     },
     {
+      name: '视图组件',
+      route: '/learn/view-component',
+    },
+    {
       name: '创建项目',
       route: '/learn/create-project',
     },
