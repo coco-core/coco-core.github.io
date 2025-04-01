@@ -84,7 +84,7 @@ class LocalStorage {
     return <ContentLayout sideMenu={<SideMenu />}>
       <Header1>总览</Header1>
       <Header2>什么是coco-mvc？</Header2>
-      <div>coco-mvc（coco是coconut的缩写）是一个Web框架，帮助开发者构建可扩展的Web应用。主要特性：</div>
+      <div>coco-mvc（coco是coconut的缩写）是一个JavaScript框架，致力于帮助开发者构建高扩展性的Web应用。主要特性：</div>
       <div className={'flex flex-col justify-between leading-30 text-3xl text-amber-800 font-bold'}>
         <div>
           1. 装饰器
