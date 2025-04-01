@@ -3,7 +3,6 @@ import SideMenu from "@/view/side-menu";
 import Header1 from "@/view/header-1";
 import Header2 from "@/view/header-2";
 import Code from "@/view/code";
-import Card from "@/view/card";
 import ContentLayout from "@/layout/content-layout";
 
 @route('/learn/overview')
@@ -17,7 +16,7 @@ class Button () {
     return <button>登录</button>
   }
 }
-  `
+  `;
   code1 = `
 @view()  
 class Button () {
@@ -49,13 +48,13 @@ class LoginController {
   loginService: LoginService;
 
   @autowired()
-  localStorageService: LocalStorageService;
+  localStorage: LocalStorage;
   
   login() {
     try {
       // 处理多个服务层的逻辑，但不关心具体实现
       const { token } = this.loginService.login();
-      this.localStorageService.set('token', token);
+      this.localStorage.set('token', token);
       return true;
     } catch (e) {
       return false
@@ -73,8 +72,8 @@ class LoginService {
 }
 `
   code4 = `
-@service()  
-class LocalStorageService {
+@component()  
+class LocalStorage {
   set(key, value) {
     localStorage.setItem(key, value);
   }
@@ -86,20 +85,22 @@ class LocalStorageService {
       <Header1>总览</Header1>
       <Header2>什么是coco-mvc？</Header2>
       <div>coco-mvc（coco是coconut的缩写）是一个Web框架，帮助开发者构建可扩展的Web应用。主要特性：</div>
-      <ul>
-        <li>装饰器</li>
-        <li>MVC</li>
-        <li>约定大于配置</li>
-      </ul>
+      <div className={'flex flex-col justify-between leading-30 text-3xl text-amber-800 font-bold'}>
+        <div>
+          1. 装饰器
+        </div>
+        <div>
+          2. MVC
+        </div>
+        <div>
+          3. 约定大于配置
+        </div>
+      </div>
       <Header2>装饰器</Header2>
       装饰器是一种设计模式，允许开发者在不改变代码结构的前提下扩展类的功能。
       <div>一个简单的例子：</div>
       <Code code={this.code} />
       Button是一个普通的类，这里添加了view装饰器，表示Button就是一个用于描述页面的视图类组件。
-      <Card>
-        熟悉React的开发者会发现：这是类组件吧？确实如此，差别在于React通过继承Component声明组件，coco-mvc通过装饰器声明组件。
-        当然还有其他的相同点和不同点，目前可以先忽略。 因为装饰器是基于类的，尽量和React的类组件保持一致可以减少学习成本。
-      </Card>
       目前es中装饰器处于stage-3阶段，因为coco-mvc集成了babel插件，开箱即用。深入学习es装饰器：https://github.com/tc39/proposal-decorators
       <Header2>MVC</Header2>
       <div>MVC（Model-View-Controller）是一种设计模式，它将应用程序分成不同的层，每一层负责不同的任务。</div>
@@ -110,6 +111,7 @@ class LocalStorageService {
       <Code code={this.code2} />
       服务层：
       <Code code={this.code3} />
+      工具层：
       <Code code={this.code4} />
       <div>通过将一段业务划分为“视图-控制-服务”三层，每一层都专注自己的职责范围，有利于代码的模块化，提高可维护性。</div>
       <table>
