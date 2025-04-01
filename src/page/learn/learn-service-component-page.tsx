@@ -43,7 +43,7 @@ class TodoService () {
       <div>现在我们还需要另外一个业务模块，例如：获取待办，新增待办，完成待办</div>
       <Code code={this.code1} />
       <Card>
-        注意：这里新增TodoService类，而不是把待办的操作放在UserService类中，这是因为业务模块应该保持高内聚，所以服务组件也保持高内聚。
+        注意：这里额外新增TodoService类，而不是把待办的操作放在UserService类中，这是因为业务模块应该保持高内聚，所以服务组件也保持高内聚。
       </Card>
     </ContentLayout>
   }

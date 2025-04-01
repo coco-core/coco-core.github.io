@@ -48,13 +48,13 @@ class LoginController {
   loginService: LoginService;
 
   @autowired()
-  localStorageService: LocalStorageService;
+  localStorage: LocalStorage;
   
   login() {
     try {
       // 处理多个服务层的逻辑，但不关心具体实现
       const { token } = this.loginService.login();
-      this.localStorageService.set('token', token);
+      this.localStorage.set('token', token);
       return true;
     } catch (e) {
       return false
@@ -72,8 +72,8 @@ class LoginService {
 }
 `
   code4 = `
-@service()  
-class LocalStorageService {
+@component()  
+class LocalStorage {
   set(key, value) {
     localStorage.setItem(key, value);
   }
@@ -105,6 +105,7 @@ class LocalStorageService {
       <Code code={this.code2} />
       服务层：
       <Code code={this.code3} />
+      工具层：
       <Code code={this.code4} />
       <div>通过将一段业务划分为“视图-控制-服务”三层，每一层都专注自己的职责范围，有利于代码的模块化，提高可维护性。</div>
       <table>
