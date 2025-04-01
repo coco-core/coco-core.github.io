@@ -85,11 +85,17 @@ class LocalStorage {
       <Header1>总览</Header1>
       <Header2>什么是coco-mvc？</Header2>
       <div>coco-mvc（coco是coconut的缩写）是一个Web框架，帮助开发者构建可扩展的Web应用。主要特性：</div>
-      <ul>
-        <li>装饰器</li>
-        <li>MVC</li>
-        <li>约定大于配置</li>
-      </ul>
+      <div className={'flex flex-col justify-between leading-30 text-3xl text-amber-800 font-bold'}>
+        <div>
+          1. 装饰器
+        </div>
+        <div>
+          2. MVC
+        </div>
+        <div>
+          3. 约定大于配置
+        </div>
+      </div>
       <Header2>装饰器</Header2>
       装饰器是一种设计模式，允许开发者在不改变代码结构的前提下扩展类的功能。
       <div>一个简单的例子：</div>
