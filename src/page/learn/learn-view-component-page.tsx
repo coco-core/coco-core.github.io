@@ -89,11 +89,11 @@ class Button () {
   render() {
     return <ContentLayout sideMenu={<SideMenu />}>
       <Header1>视图组件</Header1>
-      <div>视图组件就是描述页面的组件，小到一个字一个div，大到一个表单一个页面都是视图组件。视图组件的核心就是绘制页面，响应用户输入。</div>
+      <div>视图组件就是描述页面的组件，小到一个字一个div，大到一个表单一个页面都是视图组件。</div>
       <Header2>@view</Header2>
       <div>下面给出了一个简单的点赞按钮组件：</div>
       <Code code={this.code} />
-      使用@view()来什么一个视图组件；使用render函数来表示视图应该渲染什么。
+      使用@view()标记一个类是视图组件；视图组件必须有一个名为render渲染方法。
       <Card>
         熟悉React的开发者会发现：这是类组件吧？确实如此，差别在于React通过继承React.Component类声明组件，coco-mvc通过装饰器声明组件。
         因为装饰器是基于类的，尽量和React的类组件保持一致可以减少学习成本。

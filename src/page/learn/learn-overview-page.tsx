@@ -1,4 +1,4 @@
-import {route, page} from "coco-mvc";
+import {route, page, reactive} from "coco-mvc";
 import SideMenu from "@/view/side-menu";
 import Header1 from "@/view/header-1";
 import Header2 from "@/view/header-2";
@@ -9,11 +9,20 @@ import ContentLayout from "@/layout/content-layout";
 @page()
 class LearnOverviewPage {
   code = `
-// 使用装饰器申明一个按钮组件
 @view()  
 class Button () {
+  @reactive()
+  num: number = 0;
+  
+  handleClick = () => {
+    this.num = this.num + 1;
+  } 
+
   render() {
-    return <button>登录</button>
+    return <div>
+        <button onClick={this.handleClick}>+1</button>
+        {this.num}
+    </div>
   }
 }
   `;
@@ -80,29 +89,24 @@ class LocalStorage {
 }
   `
 
+  @reactive()
+  count: number = 0;
+  handleClick = () =>  {
+    this.count++;
+  }
+
   render() {
     return <ContentLayout sideMenu={<SideMenu />}>
       <Header1>总览</Header1>
       <Header2>什么是coco-mvc？</Header2>
-      <div>coco-mvc（coco是coconut的缩写）是一个JavaScript框架，致力于帮助开发者构建高扩展性的Web应用。主要特性：</div>
-      <div className={'flex flex-col justify-between leading-30 text-3xl text-amber-800 font-bold'}>
-        <div>
-          1. 装饰器
-        </div>
-        <div>
-          2. MVC
-        </div>
-        <div>
-          3. 约定大于配置
-        </div>
-      </div>
-      <Header2>装饰器</Header2>
-      装饰器是一种设计模式，允许开发者在不改变代码结构的前提下扩展类的功能。
-      <div>一个简单的例子：</div>
+      <div>coco-mvc（coco是coconut的缩写）是一个JavaScript框架，使用装饰器模式开发web应用。例如一个计数器组件：</div>
       <Code code={this.code} />
-      Button是一个普通的类，这里添加了view装饰器，表示Button就是一个用于描述页面的视图类组件。
-      目前es中装饰器处于stage-3阶段，因为coco-mvc集成了babel插件，开箱即用。深入学习es装饰器：https://github.com/tc39/proposal-decorators
+      <div>
+        <button className={'px-3 rounded-xs border border-amber-800 text-amber-800'} onClick={this.handleClick}>+1</button>{this.count}
+      </div>
+      通过@view()标记Button类是一个视图组件，通过@reactive()标记修改num时需要重新渲染页面，我们完成了一个自定义组件。
       <Header2>MVC</Header2>
+      <div>前面展示了如何绘制视图组件，但一个完整的前端项目不只有视图，还包含了业务逻辑、网络请求工具、全局状态、路由等等等等，这些功能有序的组合在一起才能完成一个项目。为此我们引入了MVC分层的概念：</div>
       <div>MVC（Model-View-Controller）是一种设计模式，它将应用程序分成不同的层，每一层负责不同的任务。</div>
       <div>一个例子：用户点击登录按钮&nbsp;-&gt;&nbsp;发送网络请求&nbsp;-&gt;&nbsp;页面跳转的例子，代码大体如下：</div>
       视图层：
