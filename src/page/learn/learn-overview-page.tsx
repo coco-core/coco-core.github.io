@@ -102,7 +102,7 @@ class LocalStorage {
       <div>coco-mvc（coco是coconut的缩写）是一个JavaScript框架，使用装饰器模式开发web应用。例如一个计数器组件：</div>
       <Code code={this.code} />
       <div>
-        <button className={'px-3 rounded-xs border border-amber-800 text-amber-800'} onClick={this.handleClick}>+1</button>{this.count}
+        <button className={'px-3 rounded-xs border border-amber-800 text-primary'} onClick={this.handleClick}>+1</button>{this.count}
       </div>
       通过@view()标记Button类是一个视图组件，通过@reactive()标记修改num时需要重新渲染页面，我们完成了一个自定义组件。
       <Header2>MVC</Header2>
