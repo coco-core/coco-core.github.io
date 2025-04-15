@@ -29,7 +29,7 @@ class HeaderBar {
       className={'fixed flex flex-row justify-between items-center top-0 left-0 w-full px-8 h-14 border-b bg-white border-gray-200'}>
       <div className={'cursor-pointer'} onClick={this.clickVersion}>
         <span>v0.0.1-alpha202504121038</span>
-        <div className={'font-bold text-amber-800'}>目前处于内部预览版，请不要用于生产环境</div>
+        <div className={'font-bold text-primary'}>目前处于内部预览版，请不要用于生产环境</div>
       </div>
       <div className={'flex justify-center'}>
         <div className={'mx-2 cursor-pointer'} onClick={this.clickLearn}>教程</div>
