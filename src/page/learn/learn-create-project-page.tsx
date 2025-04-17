@@ -1,8 +1,6 @@
 import {route, page} from "coco-mvc";
 import SideMenu from "@/view/side-menu";
-import Header1 from "@/view/header-1";
-import Header2 from "@/view/header-2";
-import Code from "@/view/code";
+import { Header1, Header2, Code } from "cocojs-component-demo";
 import ContentLayout from "@/layout/content-layout";
 
 @route('/learn/create-project')

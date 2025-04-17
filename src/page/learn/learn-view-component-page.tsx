@@ -1,9 +1,6 @@
 import {route, page, reactive} from "coco-mvc";
 import SideMenu from "@/view/side-menu";
-import Header1 from "@/view/header-1";
-import Header2 from "@/view/header-2";
-import Code from "@/view/code";
-import Card from "@/view/card";
+import { Header1, Header2, Code, Card } from "cocojs-component-demo";
 import ContentLayout from "@/layout/content-layout";
 
 @route('/learn/view-component')
