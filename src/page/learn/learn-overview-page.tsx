@@ -1,66 +1,86 @@
-import {route, page, reactive} from "coco-mvc";
+import {route, page, reactive, bind, Router, autowired} from "coco-mvc";
 import SideMenu from "@/view/side-menu";
-import { Header1, Header2, Code } from "cocojs-component-demo";
+import { Header1, Header2, Code, InlineCode, CodePanel, Button, Table } from "cocojs-component-demo";
 import ContentLayout from "@/layout/content-layout";
+import LoginController from "@/controller/login-controller";
 
 @route('/learn/overview')
 @page()
 class LearnOverviewPage {
   code = `
-@view()  
+import { view, reactive } from 'coco-mvc';
+
+@view()
 class Button () {
   @reactive()
   num: number = 0;
   
   handleClick = () => {
     this.num = this.num + 1;
-  } 
+  }
 
   render() {
     return <div>
-        <button onClick={this.handleClick}>+1</button>
-        {this.num}
+      <Button onClick={this.handleClick}>点我</Button>
+      {this.num}
     </div>
   }
 }
   `;
-  code1 = `
-@view()  
+
+  mvcCodes = [
+    {
+      name: '视图层',
+      code: `
+import { view, autowired, Router } from 'coco-mvc';
+import LoginController from "@/controller/login-controller";
+
+@view()
 class Button () {
   
   @autowired()
-  loginControler: LoginController;
-  
-  @bind()
-  clickLogin() {
-    // 调用控制层登录接口，不关心具体实现
-    const success = this.loginControler.login();
-    if (success) {
-      history.pushState({}, '', '/index');
-    } else {
-      alert("登录失败")
-    }
+  router: Router;
+  @autowired()
+  loginController: LoginController;
+  @reactive()
+  loggingIn: boolean = false;
+
+  clickLogin = async () => {
+    this.loggingIn = true;
+    await this.loginController.login();
+    this.router.navigateTo('/login-success')
+    this.loggingIn = false;
   }
   
   render() {
-    return <button onClick={this.clickLogin}>登录</button>
+    return <Button 
+          type={'primary'}
+          onClick={this.clickLogin}
+          loading={this.loggingIn}
+    >登录</Button>
   }
 }
-`;
+    `
+    },
+    {
+      name: '控制层',
+      code: `
+import {controller, autowired} from "coco-mvc";
+import LoginService from "@/service/login-service";
+import LocalStorage from "@/component/local-storage";
 
-  code2 = `
-@controller()  
+@controller()
 class LoginController {
   @autowired()
   loginService: LoginService;
 
   @autowired()
   localStorage: LocalStorage;
-  
-  login() {
+
+  async login() {
     try {
-      // 处理多个服务层的逻辑，但不关心具体实现
-      const { token } = this.loginService.login();
+      // 处理多个服务层的逻辑
+      const token = await this.loginService.login();
       this.localStorage.set('token', token);
       return true;
     } catch (e) {
@@ -68,24 +88,45 @@ class LoginController {
     }
   }
 }
-`
 
-  code3 = `
-@service()  
+export default LoginController;
+`
+    },
+    {
+      name: '服务层',
+      code: `
+import { service } from 'coco-mvc'
+
+@service()
 class LoginService {
-  login() {
-    return axios.post('/login')
+  async login(): Promise<string> {
+    // mock http request
+    return new Promise((resolve) => {
+      const token = 'mock-token';
+      setTimeout(() => {resolve(token)}, 2000)
+    })
   }
 }
+
+export default LoginService;
 `
-  code4 = `
-@component()  
+    },
+    {
+      name: '工具层',
+      code: `
+import { component } from 'coco-mvc';
+
+@component()
 class LocalStorage {
-  set(key, value) {
+  set(key: string, value: string) {
     localStorage.setItem(key, value);
   }
 }
+
+export default LocalStorage;
   `
+    }
+  ]
 
   @reactive()
   count: number = 0;
@@ -93,73 +134,57 @@ class LocalStorage {
     this.count++;
   }
 
+  @autowired()
+  router: Router;
+  @autowired()
+  loginController: LoginController;
+  @reactive()
+  loggingIn: boolean = false;
+
+  clickLogin = async () => {
+    this.loggingIn = true;
+    await this.loginController.login();
+    this.router.navigateTo('/login-success')
+    this.loggingIn = false;
+  }
+
+  columns = [
+    {title: '层级', dataIndex: 'level'},
+    {title: '关注', dataIndex: 'care'},
+    {title: '不关注', dataIndex: 'no-care'},
+  ]
+  dataSource = [
+    {'level': '视图层', 'care': '1.UI渲染和交互', 'no-care': '1.业务具体实现'},
+    {'level': '控制层', 'care': '1.为视图层提供接口；2.业务流转控制', 'no-care': '1.UI；2.业务具体实现'},
+    {'level': '服务层', 'care': '1.为控制层提供接口；2.服务具体实现', 'no-care': '1.UI；2.业务流程'},
+  ]
+
   render() {
     return <ContentLayout sideMenu={<SideMenu />}>
       <Header1>总览</Header1>
       <Header2>什么是coco-mvc？</Header2>
-      <div>coco-mvc（coco是coconut的缩写）是一个JavaScript框架，使用装饰器模式开发web应用。例如一个计数器组件：</div>
-      <Code code={this.code} />
-      <div>
-        <button className={'px-3 rounded-xs border border-amber-800 text-primary'} onClick={this.handleClick}>+1</button>{this.count}
+      <div>coco-mvc（coco是coconut的缩写）是一个JavaScript框架，使用装饰器开发web应用。装饰器是一种设计模式，允许开发者在不改变代码结构的前提下扩展类的功能。</div>
+      <div>例如我们想要开发一个计数器组件：</div>
+      <div className={'flex flex-row'}>
+        <Code code={this.code} />
+        <div className={'m-2'}>
+          <Button type={'primary'} onClick={this.handleClick}>点我</Button>{this.count}
+        </div>
       </div>
-      通过@view()标记Button类是一个视图组件，通过@reactive()标记修改num时需要重新渲染页面，我们完成了一个自定义组件。
+      在示例中，<InlineCode>@view()</InlineCode>装饰器标记Button类成视图组件，<InlineCode>@reactive()</InlineCode>装饰器使得<InlineCode>this.num</InlineCode>具备响应式能力，我们完成了一个自定义组件。
       <Header2>MVC</Header2>
-      <div>前面展示了如何绘制视图组件，但一个完整的前端项目不只有视图，还包含了业务逻辑、网络请求工具、全局状态、路由等等等等，这些功能有序的组合在一起才能完成一个项目。为此我们引入了MVC分层的概念：</div>
+      <div>上面展示了如何绘制视图组件，但一个前端项目往往还还包含了路由、全局状态、业务、各类工具等等等等，这些模块共同配置才能完成一个项目。为此我们引入了MVC分层的概念：</div>
       <div>MVC（Model-View-Controller）是一种设计模式，它将应用程序分成不同的层，每一层负责不同的任务。</div>
-      <div>一个例子：用户点击登录按钮&nbsp;-&gt;&nbsp;发送网络请求&nbsp;-&gt;&nbsp;页面跳转的例子，代码大体如下：</div>
-      视图层：
-      <Code code={this.code1} />
-      控制层：
-      <Code code={this.code2} />
-      服务层：
-      <Code code={this.code3} />
-      工具层：
-      <Code code={this.code4} />
+      <div>一个例子：用户点击登录按钮&nbsp;-&gt;&nbsp;发送网络请求&nbsp;-&gt;&nbsp;页面跳转的例子，代码如下：</div>
+      <div className={'flex flex-row'}>
+        <CodePanel tabs={this.mvcCodes}></CodePanel>
+        <Button type={'primary'} onClick={this.clickLogin} loading={this.loggingIn}>登录</Button>
+      </div>
       <div>通过将一段业务划分为“视图-控制-服务”三层，每一层都专注自己的职责范围，有利于代码的模块化，提高可维护性。</div>
-      <table>
-        <thead>
-        <tr>
-          <th>层</th>
-          <th>关注</th>
-          <th>不关注</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr>
-          <td>视图层</td>
-          <td>1.UI渲染和交互</td>
-          <td>2.业务具体实现</td>
-        </tr>
-        <tr>
-          <td>控制层</td>
-          <td>1.为视图层提供接口；2.业务流转控制</td>
-          <td>1.UI；2.业务具体实现</td>
-        </tr>
-        <tr>
-          <td>服务层</td>
-          <td>1.为控制层提供接口；2.服务具体实现</td>
-          <td>1.UI；2.业务流程</td>
-        </tr>
-        </tbody>
-      </table>
+      <Table columns={this.columns} datasource={this.dataSource} />
       <Header2>约定大于配置</Header2>
       <div>约定大于配置是一种软件设计范式，旨在减少开发人员要做的决定的次数，降低学习和沟通成本。</div>
       <div>coco-mvc规定了常用类的存放位置，具体见&nbsp;目录结构&nbsp;页面。</div>
-      <Header2>其他特性</Header2>
-      <ul>
-        <li>
-          <span className={'text-blue-600'}>TypeScript支持</span>
-          TypeScript提供了良好的静态类型校验能力和提醒功能，且coco-mvc依赖TypeScript的transformer能力，所以coco-mvc项目全部使用Ts编写。Ts官网：https://www.typescriptlang.org/
-        </li>
-        <li>
-          <span className={'text-blue-600'}>JSX</span>
-          同React一样，coco-mvc同样使用JSX书写标签语法，学习参见：https://zh-hans.react.dev/learn/writing-markup-with-jsx
-        </li>
-        <li>
-          <span className={'text-blue-600'}>Tailwindcss</span>
-          框架已经内置Tailwindcss，因为Tailwindcss和coco-mvc推荐的一个文件一个类的思想非常契合。Tailwindcss官网：https://tailwindcss.com/
-        </li>
-      </ul>
     </ContentLayout>
   }
 }

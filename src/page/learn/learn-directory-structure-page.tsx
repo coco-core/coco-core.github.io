@@ -16,19 +16,19 @@ root
  |   |-- .coco // 运行时文件夹(由框架生成)
  |   |
  |   |-- layout // 布局类组件根目录
+ |   |    |-- xxx.tsx
  |   |
  |   |-- page // 页面组件根目录
  |   |    |-- login-page.tsx
  |   |    
- |   |-- view  // 非特定视图组件根目录
+ |   |-- view  // 一般视图组件根目录
+ |   |    |-- xxx.tsx
  |   |    
  |   |-- controller // 控制类组件根目录
  |   |    |-- user-controller.ts
  |   |    
  |   |-- service // 服务类组件根目录
  |   |    |-- user-service.ts
- |   |    
- |   |-- configuration //     
  |   |    
  |   |-- component // 其他组件根目录
  |   |    
