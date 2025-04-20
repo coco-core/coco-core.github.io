@@ -1,7 +1,4 @@
-import {route, page} from "../../../coconut-framework/packages/coco-mvc";
-import SideMenu from "@/view/side-menu";
-import { Header1, Header2, Code, Card } from "../../../coco-component-demo";
-import ContentLayout from "@/layout/content-layout";
+import {page, route} from "coco-mvc";
 
 @route('/login-success')
 @page()
