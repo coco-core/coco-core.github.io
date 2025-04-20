@@ -103,7 +103,7 @@ class LoginService {
     // mock http request
     return new Promise((resolve) => {
       const token = 'mock-token';
-      setTimeout(() => {resolve(token)}, 2000)
+      setTimeout(() => {resolve(token)}, 1000)
     })
   }
 }
@@ -159,6 +159,10 @@ export default LocalStorage;
     {'level': '服务层', 'care': '1.为控制层提供接口；2.服务具体实现', 'no-care': '1.UI；2.业务流程'},
   ]
 
+  clickDirectoryStructure = () => {
+    this.router.navigateTo('/learn/directory-structure');
+  }
+
   render() {
     return <ContentLayout sideMenu={<SideMenu />}>
       <Header1>总览</Header1>
@@ -184,7 +188,7 @@ export default LocalStorage;
       <Table columns={this.columns} datasource={this.dataSource} />
       <Header2>约定大于配置</Header2>
       <div>约定大于配置是一种软件设计范式，旨在减少开发人员要做的决定的次数，降低学习和沟通成本。</div>
-      <div>coco-mvc规定了常用类的存放位置，具体见&nbsp;目录结构&nbsp;页面。</div>
+      <div>coco-mvc约定了常见类的根目录，具体见<Button type={'primary-link'} onClick={this.clickDirectoryStructure}>目录结构页面</Button>。</div>
     </ContentLayout>
   }
 }

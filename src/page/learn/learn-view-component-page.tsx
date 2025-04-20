@@ -124,9 +124,9 @@ class Button () {
       </Card>
       <Header1>生命周期函数</Header1>
       <ul>
-        <li><span className={'text-blue-600'}>componentDidMount</span>组件首次挂载成功后触发。</li>
-        <li><span className={'text-blue-600'}>componentDidUpdate</span>组件的props发生变化时触发。</li>
-        <li><span className={'text-blue-600'}>componentWillUnmount</span>组件即将销毁前触发。</li>
+        <li><span className={'text-blue-600'}>viewDidMount</span>组件首次挂载成功后触发。</li>
+        <li><span className={'text-blue-600'}>viewDidUpdate</span>组件的props发生变化时触发。</li>
+        <li><span className={'text-blue-600'}>viewWillUnmount</span>组件即将销毁前触发。</li>
       </ul>
       <Header1>其他装饰器</Header1>
       <div>除了view装饰器用于声明通用的视图组件，coco-mvc还提供了具有特定业务含义的视图装饰器：</div>
