@@ -10,7 +10,7 @@ class LearnControllerComponentPage {
 @controller()  
 class LoginController {
   @autowired()
-  loginService: LoginService;
+  loginApi: LoginApi;
 
   @autowired()
   localStorage: LocalStorage;
@@ -18,7 +18,7 @@ class LoginController {
   login() {
     try {
       // 处理多个服务层的逻辑，但不关心具体实现
-      const { token } = this.loginService.login();
+      const { token } = this.loginApi.login();
       this.localStorage.set('token', token);
       return true;
     } catch (e) {
