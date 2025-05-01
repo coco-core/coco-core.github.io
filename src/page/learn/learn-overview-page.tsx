@@ -66,13 +66,13 @@ class Button () {
       name: '控制层',
       code: `
 import {controller, autowired} from "coco-mvc";
-import LoginService from "@/service/login-service";
+import LoginApi from "@/api/login-api";
 import LocalStorage from "@/component/local-storage";
 
 @controller()
 class LoginController {
   @autowired()
-  loginService: LoginService;
+  loginApi: LoginApi;
 
   @autowired()
   localStorage: LocalStorage;
@@ -80,7 +80,7 @@ class LoginController {
   async login() {
     try {
       // 处理多个服务层的逻辑
-      const token = await this.loginService.login();
+      const token = await this.loginApi.login();
       this.localStorage.set('token', token);
       return true;
     } catch (e) {
@@ -93,12 +93,12 @@ export default LoginController;
 `
     },
     {
-      name: '服务层',
+      name: '接口层',
       code: `
 import { service } from 'coco-mvc'
 
-@service()
-class LoginService {
+@api()
+class LoginApi {
   async login(): Promise<string> {
     // mock http request
     return new Promise((resolve) => {
@@ -108,7 +108,7 @@ class LoginService {
   }
 }
 
-export default LoginService;
+export default LoginApi;
 `
     },
     {

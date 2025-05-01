@@ -1,7 +1,7 @@
-import { service } from 'coco-mvc'
+import { api } from 'coco-mvc'
 
-@service()
-class LoginService {
+@api()
+class LoginApi {
   async login(): Promise<string> {
     // mock http request
     return new Promise((resolve) => {
@@ -11,4 +11,4 @@ class LoginService {
   }
 }
 
-export default LoginService;
+export default LoginApi;

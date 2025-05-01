@@ -27,8 +27,8 @@ root
  |   |-- controller // 控制类组件根目录
  |   |    |-- user-controller.ts
  |   |    
- |   |-- service // 服务类组件根目录
- |   |    |-- user-service.ts
+ |   |-- api // 接口类组件根目录
+ |   |    |-- user-api.ts
  |   |    
  |   |-- component // 其他组件根目录
  |   |    

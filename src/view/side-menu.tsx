@@ -17,8 +17,8 @@ class SideMenu {
       route: '/learn/view-component',
     },
     {
-      name: '服务组件',
-      route: '/learn/service-component',
+      name: '接口组件',
+      route: '/learn/api-component',
     },
     {
       name: '控制组件',
@@ -64,8 +64,8 @@ class SideMenu {
       route: '/reference/controller'
     },
     {
-      name: 'service',
-      route: '/reference/service'
+      name: 'api',
+      route: '/reference/api'
     },
     {
       name: 'bind',

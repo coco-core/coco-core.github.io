@@ -3,12 +3,12 @@ import SideMenu from "@/view/side-menu";
 import { Header1, Header2, Code, Card } from "cocojs-component-demo";
 import ContentLayout from "@/layout/content-layout";
 
-@route('/reference/service')
+@route('/reference/api')
 @page()
-class ReferenceServicePage {
+class ReferenceApiPage {
   code = `
-@service()
-class UserService {
+@api()
+class UserApi {
   async login() {}
   
   async logout() {}
@@ -16,18 +16,18 @@ class UserService {
   `
   render() {
     return <ContentLayout sideMenu={<SideMenu type={'reference'} />}>
-      <Header1>@service</Header1>
-      <div>service用于申明被装饰的类是服务类，服务类比较内聚，只关心本服务相关的业务。</div>
+      <Header1>@api</Header1>
+      <div>api用于申明被装饰的类是接口类，接口类请求后端服务接口，为控制层提供服务。</div>
       <Header2>装饰class</Header2>
       <Code code={this.code} />
       <Card>
         <div>注意</div>
         <ul>
-          <li>源文件放在src/service文件夹下</li>
+          <li>源文件放在src/api文件夹下</li>
         </ul>
       </Card>
     </ContentLayout>
   }
 }
 
-export default ReferenceServicePage;
+export default ReferenceApiPage;

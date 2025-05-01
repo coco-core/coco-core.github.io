@@ -11,7 +11,7 @@ const config = {
     "plugins": [
       new CopyWebpackPlugin({
         patterns: [
-          { from: path.resolve(process.cwd(), "other-assert"), to: path.join(process.cwd(), "docs") },
+          { from: path.resolve(process.cwd(), "public") },
         ],
       }),
     ]
