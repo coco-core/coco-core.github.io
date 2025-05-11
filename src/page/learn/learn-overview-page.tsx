@@ -95,7 +95,7 @@ export default LoginController;
     {
       name: '接口层',
       code: `
-import { service } from 'coco-mvc'
+import { api } from 'coco-mvc'
 
 @api()
 class LoginApi {
@@ -156,7 +156,7 @@ export default LocalStorage;
   dataSource = [
     {'level': '视图层', 'care': '1.UI渲染和交互', 'no-care': '1.业务具体实现'},
     {'level': '控制层', 'care': '1.为视图层提供接口；2.业务流转控制', 'no-care': '1.UI；2.业务具体实现'},
-    {'level': '服务层', 'care': '1.为控制层提供接口；2.服务具体实现', 'no-care': '1.UI；2.业务流程'},
+    {'level': '接口层', 'care': '1.为控制层提供接口；2.业务实现（例如调用后端接口）', 'no-care': '1.UI；2.业务流程'},
   ]
 
   clickDirectoryStructure = () => {
